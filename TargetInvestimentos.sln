@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TargetInvestimentos.Api", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TargetInvestimentos.Domain", "TargetInvestimentos.Domain\TargetInvestimentos.Domain.csproj", "{64AC69BE-D01B-45D6-9933-073A69A13C1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargetInvestimentos.Infrastructure", "TargetInvestimentos.Infrastructure\TargetInvestimentos.Infrastructure.csproj", "{8A57D6FB-3440-4F20-AD2B-FAEBD8824BA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TargetInvestimentos.Infrastructure", "TargetInvestimentos.Infrastructure\TargetInvestimentos.Infrastructure.csproj", "{8A57D6FB-3440-4F20-AD2B-FAEBD8824BA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
