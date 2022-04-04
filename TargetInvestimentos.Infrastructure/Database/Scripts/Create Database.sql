@@ -1,0 +1,69 @@
+﻿IF NOT EXISTS (SELECT 1 FROM sys.databases where name = 'app')
+BEGIN
+	CREATE DATABASE app
+END
+GO
+
+USE [app]
+
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Address' and xtype='U')
+BEGIN
+	CREATE TABLE Address (
+		ID_Address INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+		CD_PostalCode VARCHAR(8) NOT NULL,
+		NM_State VARCHAR(100) NOT NULL,
+		CD_StateAcronym VARCHAR(2) NOT NULL,
+		DS_PublicPlace VARCHAR(200) NOT NULL,
+		NM_City VARCHAR(200) NOT NULL,
+		DS_Complement VARCHAR(200) NOT NULL,
+		NM_District VARCHAR(200) NOT NULL)
+END
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Person' and xtype='U')
+BEGIN
+	CREATE TABLE Person (
+		ID_Person INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+		ID_Address INT NOT NULL,
+		DT_BirthDate DATE NOT NULL,
+		DT_RegisterDate DATETIME NOT NULL,
+		NM_FullName VARCHAR(200) NOT NULL,
+		IS_Vip BIT NOT NULL DEFAULT 0,
+		MonthlyIncome DECIMAL NOT NULL,
+		Cpf VARCHAR(11) NOT NULL)
+     
+	 ALTER TABLE Person ADD CONSTRAINT fk_Person_Address_id 
+	 FOREIGN KEY (ID_Address) REFERENCES Address(ID_Address);
+END
+
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='AddressLog' and xtype='U')
+BEGIN
+	CREATE TABLE AddressLog (
+		ID_AddressLog INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+		ID_Address INT NOT NULL,
+		CD_TypeLog VARCHAR(1) NOT NULL,
+		CD_PostalCode VARCHAR(8) NOT NULL,
+		NM_State VARCHAR(100) NOT NULL,
+		CD_StateAcronym VARCHAR(2) NOT NULL,
+		DS_PublicPlace VARCHAR(200) NOT NULL,
+		NM_City VARCHAR(200) NOT NULL,
+		DS_Complement VARCHAR(200) NOT NULL,
+		NM_District VARCHAR(200) NOT NULL)
+END
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='PersonLog' and xtype='U')
+BEGIN
+	CREATE TABLE PersonLog (
+		ID_PersonLog INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+		ID_Person INT NOT NULL,
+		CD_TypeLog VARCHAR(1) NOT NULL,
+		ID_Address INT NOT NULL,
+		DT_BirthDate DATE NOT NULL,
+		DT_RegisterDate DATETIME NOT NULL,
+		NM_FullName VARCHAR(200) NOT NULL,
+		IS_Vip BIT NOT NULL DEFAULT 0,
+		MonthlyIncome DECIMAL NOT NULL,
+		Cpf VARCHAR(11) NOT NULL)
+END
+GO
