@@ -41,7 +41,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "https://localhost:7028;http://localhost:5028",
-        "DATABASE_HOST": "127.0.0.1"
+        "DATABASE_HOST": "127.0.0.1",
+        "DATABASE_PASSWORD": "Pedro@123"
       },
       "distributionName": ""
     }
