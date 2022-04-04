@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Context>(options =>
 {
-    options.UseSqlServer($"Server={DATABASE_HOST};Database=app;Trusted_Connection=True;Password={DATABASE_PASSWORD}");
+    options.UseSqlServer($"Server={DATABASE_HOST};Database=app;user id=sa;Password={DATABASE_PASSWORD};TrustServerCertificate=true");
 });
 
 var app = builder.Build();
