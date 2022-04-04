@@ -41,6 +41,6 @@ namespace TargetInvestimentos.Domain.Entities
         [StringLength(200)]
         public string NM_District { get; set; }
 
-        public virtual List<Person> persons { get; set; }
+        public virtual ICollection<Person> persons { get; set; }
     }
 }
