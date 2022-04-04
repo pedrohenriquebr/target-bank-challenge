@@ -19,6 +19,8 @@ namespace TargetInvestimentos.Infrastructure
         }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<AddressLog> AddressLog { get; set; }
+        public DbSet<PersonLog> PersonLog{ get; set; }
     }
 
 
