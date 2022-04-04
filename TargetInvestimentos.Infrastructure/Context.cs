@@ -10,6 +10,15 @@ namespace TargetInvestimentos.Infrastructure
             : base(options) { }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Address>()
+                .HasMany(c => c.persons)
+                .WithOne(c => c.address)
+                .HasForeignKey(c => c.ID_Address);
+        }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Address> Addresses { get; set; }
     }
 
 
