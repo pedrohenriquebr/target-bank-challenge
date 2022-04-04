@@ -13,7 +13,7 @@ namespace TargetInvestimentos.Domain.Entities
 
         public Address()
         {
-            persons = new List<Person>();
+            Person = new List<Person>();
         }
 
 
@@ -41,6 +41,6 @@ namespace TargetInvestimentos.Domain.Entities
         [StringLength(200)]
         public string NM_District { get; set; }
 
-        public virtual ICollection<Person> persons { get; set; }
+        public virtual ICollection<Person> Person { get; set; }
     }
 }
