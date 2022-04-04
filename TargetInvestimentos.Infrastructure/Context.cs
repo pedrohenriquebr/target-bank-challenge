@@ -13,12 +13,12 @@ namespace TargetInvestimentos.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Address>()
-                .HasOne<Person>(c => c.Person)
-                .WithOne(c => c.address)
-                .HasForeignKey(c => c.ID_Address);
+                .HasOne(c => c.Person)
+                .WithOne(c => c.Address)
+                .HasForeignKey<Person>(d => d.ID_Address);
         }
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Address> Address { get; set; }
         public DbSet<AddressLog> AddressLog { get; set; }
         public DbSet<PersonLog> PersonLog{ get; set; }
     }

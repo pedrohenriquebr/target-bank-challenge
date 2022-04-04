@@ -28,6 +28,6 @@ namespace TargetInvestimentos.Domain.Entities
         [StringLength(8)]
 		public string Cpf {get;set;}
 
-		public virtual Address address { get; set; }
+		public virtual Address Address { get; set; }
 	}
 }
