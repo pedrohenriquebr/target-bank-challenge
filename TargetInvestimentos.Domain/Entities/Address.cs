@@ -9,14 +9,6 @@ namespace TargetInvestimentos.Domain.Entities
 {
     public class Address
     {
-
-
-        public Address()
-        {
-            Person = new List<Person>();
-        }
-
-
         [Key]
         public int ID_Address { get; set; }
 
@@ -41,6 +33,6 @@ namespace TargetInvestimentos.Domain.Entities
         [StringLength(200)]
         public string NM_District { get; set; }
 
-        public virtual ICollection<Person> Person { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace TargetInvestimentos.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Address>()
-                .HasMany(c => c.Person)
+                .HasOne<Person>(c => c.Person)
                 .WithOne(c => c.address)
                 .HasForeignKey(c => c.ID_Address);
         }
