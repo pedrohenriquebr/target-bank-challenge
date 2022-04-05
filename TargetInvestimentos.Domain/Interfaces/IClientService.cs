@@ -9,6 +9,11 @@ namespace TargetInvestimentos.Domain.Interfaces
 {
     public interface IClientService
     {
+        public Task RegisterClient(Person p);
+
+        public Task UpdateClient(Person p);
+
+        public Task<Address> GetClientAddress(int id);
 
     }
 }
