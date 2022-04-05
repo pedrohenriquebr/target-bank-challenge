@@ -24,11 +24,4 @@ namespace TargetInvestimentos.Domain.Entities
     {
         public static State FromJson(string json) => JsonConvert.DeserializeObject<State>(json, Converter.Settings);
     }
-
-    public static class Serialize
-    {
-        public static string ToJson(this State self) => JsonConvert.SerializeObject(self, Converter.Settings);
-    }
-
-    
 }
