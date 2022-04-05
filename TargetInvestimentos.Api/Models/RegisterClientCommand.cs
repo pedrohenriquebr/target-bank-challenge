@@ -20,7 +20,7 @@ namespace TargetInvestimentos.Api.Models
         public string logradouro { get; set; }
 
         [Required]
-        public string bairron { get; set; }
+        public string bairro { get; set; }
 
         [Required]
         public string cep { get; set; }
