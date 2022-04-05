@@ -29,6 +29,9 @@ namespace TargetInvestimentos.Api.Models
         public string uf { get; set; }
 
         [Required]
+        public string estado { get; set; }
+
+        [Required]
         public string complemento { get; set; }
     }
 }
