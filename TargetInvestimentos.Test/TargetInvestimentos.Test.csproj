@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TargetInvestimentos.Api\TargetInvestimentos.Api.csproj" />
     <ProjectReference Include="..\TargetInvestimentos.Domain\TargetInvestimentos.Domain.csproj" />
   </ItemGroup>
 
