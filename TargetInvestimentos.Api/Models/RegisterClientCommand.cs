@@ -31,6 +31,10 @@ namespace TargetInvestimentos.Api.Models
         [Required]
         public string estado { get; set; }
 
+
+        [Required]
+        public string cidade { get; set; }
+
         [Required]
         public string complemento { get; set; }
     }
