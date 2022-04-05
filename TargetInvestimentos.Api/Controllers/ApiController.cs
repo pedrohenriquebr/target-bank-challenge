@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TargetInvestimentos.Api.Models;
+using TargetInvestimentos.Domain.Entities;
 using TargetInvestimentos.Infrastructure;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,9 +19,11 @@ namespace TargetInvestimentos.Api.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetStatus()
+        [HttpPost("client")]
+        public async Task<IActionResult> PostClient([FromBody] RegisterClientCommand command)
         {
+
+
             return Ok("ok");
         }
 
