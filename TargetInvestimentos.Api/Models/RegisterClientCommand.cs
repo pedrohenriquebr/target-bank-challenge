@@ -5,12 +5,30 @@ namespace TargetInvestimentos.Api.Models
     public class RegisterClientCommand
     {
         [Required]
-        public string fullName { get; set; }
+        public string nomeCompleto { get; set; }
 
         [Required]
-        public DateTime birthDate { get; set; }
+        public DateTime dataNascimento { get; set; }
+
+        [Required]
+        public decimal rendaMensal { get; set; }
 
         [Required]
         public string cpf { get; set; }
+
+        [Required]
+        public string logradouro { get; set; }
+
+        [Required]
+        public string bairron { get; set; }
+
+        [Required]
+        public string cep { get; set; }
+
+        [Required]
+        public string uf { get; set; }
+
+        [Required]
+        public string complemento { get; set; }
     }
 }
