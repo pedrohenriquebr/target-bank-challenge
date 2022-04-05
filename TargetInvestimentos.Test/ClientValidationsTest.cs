@@ -17,5 +17,12 @@ namespace TargetInvestimentos.Test
             Assert.False(ClientValidations.ValidateCPF("123.123.12399"));
             Assert.False(ClientValidations.ValidateCPF("vv"));
         }
+
+        [Fact]
+        public void TestValidateCEP()
+        {
+            //é o cep de onde moro
+            Assert.True(ClientValidations.ValidateCEP("20760-721"));
+        }
     }
 }
