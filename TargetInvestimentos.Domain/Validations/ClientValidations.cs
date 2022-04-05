@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TargetInvestimentos.Domain.Interfaces;
 
@@ -9,9 +10,20 @@ namespace TargetInvestimentos.Domain.Validations
 {
     public class ClientValidations : IClientValidations
     {
+        /// <summary>
+        ///  Valida formato de CEP
+        ///  
+        /// Fonte: https://social.msdn.microsoft.com/Forums/pt-BR/7c954e00-4461-4796-a7fa-767cc2a06176/funo-para-validar-cep-?forum=vscsharppt
+        /// </summary>
+        /// <param name="cep"></param>
+        /// <returns></returns>
         public static bool ValidateCEP(string cep)
         {
-            throw new NotImplementedException();
+            var Rgx = new Regex("^\\d{5}-\\d{3}$");
+
+            if (!Rgx.IsMatch(cep))
+                return false;
+            return true;
         }
 
         /// <summary>
