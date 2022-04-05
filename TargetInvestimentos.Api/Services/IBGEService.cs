@@ -7,11 +7,13 @@ namespace TargetInvestimentos.Api.Services
     {
         public Task<ICollection<City>> GetAllCities(string uf)
         {
+
             throw new NotImplementedException();
         }
 
         public Task<ICollection<State>> GetAllStates()
         {
+
             throw new NotImplementedException();
         }
     }
