@@ -23,6 +23,11 @@ namespace TargetInvestimentos.Test
         {
             //é o cep de onde moro
             Assert.True(ClientValidations.ValidateCEP("20760-721"));
+            Assert.False(ClientValidations.ValidateCEP("2g760-721"));
+            Assert.False(ClientValidations.ValidateCEP("abcd-721"));
+            Assert.False(ClientValidations.ValidateCEP("abcd-"));
+            Assert.False(ClientValidations.ValidateCEP("...-"));
+            Assert.False(ClientValidations.ValidateCEP("20760721"));
         }
     }
 }
