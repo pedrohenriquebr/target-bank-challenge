@@ -14,9 +14,9 @@ namespace TargetInvestimentos.Api.Services
 
         public async Task<ICollection<State>> GetAllStates()
         {
-            var reponse  = await Petrus.Get("https://servicodados.ibge.gov.br/api/v1/localidades/estados");
+            var response  = await Petrus.Get("https://servicodados.ibge.gov.br/api/v1/localidades/estados");
 
-            return new List<State>();
+            return response.Data.ToObject<List<State>>();
         }
     }
 }
