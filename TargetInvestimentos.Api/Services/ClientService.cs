@@ -1,5 +1,6 @@
 ﻿using TargetInvestimentos.Domain.Entities;
 using TargetInvestimentos.Domain.Interfaces;
+using TargetInvestimentos.Domain.Validations;
 using TargetInvestimentos.Infrastructure;
 
 namespace TargetInvestimentos.Api.Services
@@ -18,9 +19,29 @@ namespace TargetInvestimentos.Api.Services
             throw new NotImplementedException();
         }
 
-        public Task RegisterClient(Person p)
+        public async Task RegisterClient(Person p)
         {
-            throw new NotImplementedException();
+            var isValidCPF = ClientValidations.ValidateCPF(p.Cpf);
+            var isValidCEP = ClientValidations.ValidateCEP(p.Address.CD_PostalCode);
+            var errorResponse = string.Empty;
+
+            if (!isValidCPF)
+            {
+                errorResponse += "CPF informado não tem formato válido\n";
+            }
+
+            if (!isValidCEP)
+            {
+                errorResponse += "CEP informado não tem formato válido";
+            }
+
+            if (!string.IsNullOrEmpty(errorResponse))
+            {
+                throw new Exception(errorResponse);
+            }
+
+            await _context.Person.AddAsync(p);
+            
         }
 
         public Task UpdateClient(Person p)
