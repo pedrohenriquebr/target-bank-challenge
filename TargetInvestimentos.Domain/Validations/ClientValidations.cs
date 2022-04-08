@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TargetInvestimentos.Domain.Entities;
 using TargetInvestimentos.Domain.Interfaces;
 
 namespace TargetInvestimentos.Domain.Validations
@@ -75,6 +76,11 @@ namespace TargetInvestimentos.Domain.Validations
             }
 
             return cpf.EndsWith(digito);
+        }
+
+        public static bool ValidateIsVip(Person person)
+        {
+            return person.MonthlyIncome >= 6_000;
         }
     }
 }
